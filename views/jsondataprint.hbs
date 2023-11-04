@@ -1,0 +1,22 @@
+<ul>
+  {{#if (isArray data)}}
+    {{#each data}}
+      <li>
+        <ul>
+          {{#each this}}
+            <li>{{@key}}: {{this}}</li>
+          {{/each}}
+        </ul>
+        <br>
+      </li>
+    {{/each}}
+  {{else}}
+    <li>
+      <ul>
+        {{#each data}}
+          <li>{{@key}}: {{this}}</li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/if}}
+</ul>

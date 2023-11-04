@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sales Data</title>
+</head>
+
+<body>
+    <h1>Sales Data</h1>
+    <table border="2px">
+        <tr>
+            <th>Invoice ID</th>
+            <th>Branch</th>
+            <th>City</th>
+            <th>Customer Type</th>
+            <th>Product Line</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Tax (5%)</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Payment</th>
+            <th>COGS</th>
+            <th>Gross Income</th>
+            <th>Rating</th>
+        </tr>
+        {{#each salesData}}
+        {{#if (notZero Rating)}}
+        <tr>
+            <td>{{"Invoice ID"}}</td>
+            <td>{{Branch}}</td>
+            <td>{{City}}</td>
+            <td>{{"Customer type"}}</td>
+            <td>{{"Product line"}}</td>
+            <td>{{name}}</td>
+            <td>
+                <img src="{{image}}" alt="Product Image" width="100">
+            </td>
+            <td>{{"Unit price"}}</td>
+            <td>{{Quantity}}</td>
+            <td>{{"Tax 5%"}}%</td>
+            <td>{{Total}}</td>
+            <td>{{Date}}</td>
+            <td>{{Time}}</td>
+            <td>{{Payment}}</td>
+            <td>{{cogs}}</td>
+            <td>{{"gross income"}}</td>
+            <td>{{Rating}}</td>
+        </tr>
+        {{else}}
+        <tr style="background-color: yellow;">
+            <td>{{"Invoice ID"}}</td>
+            <td>{{Branch}}</td>
+            <td>{{City}}</td>
+            <td>{{"Customer type"}}</td>
+            <td>{{"Product line"}}</td>
+            <td>{{name}}</td>
+            <td>
+                <img src="{{image}}" alt="Product Image" width="100">
+            </td>
+            <td>{{"Unit price"}}</td>
+            <td>{{Quantity}}</td>
+            <td>{{"Tax 5%"}}%</td>
+            <td>{{Total}}</td>
+            <td>{{Date}}</td>
+            <td>{{Time}}</td>
+            <td>{{Payment}}</td>
+            <td>{{cogs}}</td>
+            <td>{{"gross income"}}</td>
+            <td>ZERO</td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </table>
+</body>
+
+</html>

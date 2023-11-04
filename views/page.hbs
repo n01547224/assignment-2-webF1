@@ -1,0 +1,21 @@
+{{#if (eq data 'invoice')}}
+<h1>Search for InvoiceNo</h1>
+<form action="/search/invoiceNo" method="post">
+    <label for="invoiceNo">InvoiceNo:</label>
+    <input type="text" id="invoiceNo" name="invoiceNo" required>
+    <br><br>
+    <input type="submit" value="Search">
+</form>
+
+
+{{else if (eq data 'manufacturer')}}
+<form action="/search/manufacturer" method="post">
+    <label for="manufacturer">Manufacturer:</label>
+    <input type="text" id="manufacturer" name="manufacturer" required>
+    <br><br>
+    <input type="submit" value="Search">
+</form>
+
+{{else}}
+<p>{{data}}</p>
+{{/if}}
